@@ -1,18 +1,10 @@
-# styles.py
-
 # Colors
-BACKGROUND_COLOR = "#2E3440"
-TEXT_COLOR = "#D8DEE9"
-BUTTON_COLOR = "#5E81AC"
-DELETE_BUTTON_COLOR = "#BF616A"
-PROGRESS_BAR_COLOR = "#5E81AC"
-PRIORITY_HIGH_COLOR = "#BF616A"
-PRIORITY_MEDIUM_COLOR = "#EBCB8B"
-PRIORITY_LOW_COLOR = "#A3BE8C"
-DUE_DATE_COLOR = "#81A1C1"
-TAGS_COLOR = "#88C0D0"
-COMPLETED_COLOR = "#A3BE8C"  # Green for completed tasks
-TIMER_COLOR = "#EBCB8B"  # Yellow for timed tasks
+BACKGROUND_COLOR = "#1E1E1E"  # Dark Gray
+TEXT_COLOR = "#FFFFFF"  # White
+PRIMARY_COLOR = "#4CAF50"  # Green
+SECONDARY_COLOR = "#2196F3"  # Blue
+DANGER_COLOR = "#FF5252"  # Red
+CARD_COLOR = "#2E2E2E"  # Slightly Lighter Gray
 
 # Fonts
 FONT_FAMILY = "Arial"
@@ -25,10 +17,21 @@ INPUT_STYLE = f"""
     font-size: {FONT_SIZE}px; 
     border: 1px solid #4C566A; 
     border-radius: 10px;
+    background-color: {CARD_COLOR}; 
+    color: {TEXT_COLOR};
 """
 
 BUTTON_STYLE = f"""
-    background-color: {BUTTON_COLOR}; 
+    background-color: {PRIMARY_COLOR}; 
+    color: white; 
+    padding: 8px; 
+    font-size: {FONT_SIZE}px; 
+    border: none; 
+    border-radius: 10px;
+"""
+
+SECONDARY_BUTTON_STYLE = f"""
+    background-color: {SECONDARY_COLOR}; 
     color: white; 
     padding: 8px; 
     font-size: {FONT_SIZE}px; 
@@ -37,7 +40,7 @@ BUTTON_STYLE = f"""
 """
 
 DELETE_BUTTON_STYLE = f"""
-    background-color: {DELETE_BUTTON_COLOR}; 
+    background-color: {DANGER_COLOR}; 
     color: white; 
     padding: 8px; 
     font-size: {FONT_SIZE}px; 
@@ -45,27 +48,8 @@ DELETE_BUTTON_STYLE = f"""
     border-radius: 10px;
 """
 
-PROGRESS_BAR_STYLE = f"""
-    QProgressBar {{ 
-        background-color: #3B4252; 
-        color: {TEXT_COLOR}; 
-        border-radius: 5px; 
-    }}
-    QProgressBar::chunk {{ 
-        background-color: {PROGRESS_BAR_COLOR}; 
-        border-radius: 5px; 
-    }}
-"""
-
-COMPLETED_TASK_STYLE = f"""
-    background-color: {COMPLETED_COLOR}; 
-    color: {TEXT_COLOR}; 
-    border-radius: 10px; 
-    padding: 8px;
-"""
-
-TIMER_TASK_STYLE = f"""
-    background-color: {TIMER_COLOR}; 
+CARD_STYLE = f"""
+    background-color: {CARD_COLOR}; 
     color: {TEXT_COLOR}; 
     border-radius: 10px; 
     padding: 8px;
