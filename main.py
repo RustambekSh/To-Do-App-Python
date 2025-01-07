@@ -1,5 +1,3 @@
-# main.py
-
 import sys
 from PyQt5.QtWidgets import QApplication
 from todo_app import ToDoApp
