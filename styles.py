@@ -1,4 +1,4 @@
-# Colors
+
 BACKGROUND_COLOR = "#FFFFFF"  # White
 TEXT_COLOR = "#333333"  # Dark Gray
 PRIMARY_COLOR = "#B4D4EE"  # Soft Blue
