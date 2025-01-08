@@ -1,10 +1,10 @@
 # Colors
-BACKGROUND_COLOR = "#1E1E1E"  # Dark Gray
-TEXT_COLOR = "#FFFFFF"  # White
-PRIMARY_COLOR = "#4CAF50"  # Green
-SECONDARY_COLOR = "#2196F3"  # Blue
-DANGER_COLOR = "#FF5252"  # Red
-CARD_COLOR = "#2E2E2E"  # Slightly Lighter Gray
+BACKGROUND_COLOR = "#FFFFFF"  # White
+TEXT_COLOR = "#333333"  # Dark Gray
+PRIMARY_COLOR = "#B4D4EE"  # Soft Blue
+SECONDARY_COLOR = "#FFD700"  # Gold (for accents)
+DANGER_COLOR = "#FF6B6B"  # Soft Red (for errors/danger)
+CARD_COLOR = "#F5F5F5"  # Light Gray (for cards/widgets)
 
 # Fonts
 FONT_FAMILY = "Arial"
@@ -15,7 +15,7 @@ HEADER_FONT_SIZE = 24
 INPUT_STYLE = f"""
     padding: 8px; 
     font-size: {FONT_SIZE}px; 
-    border: 1px solid #4C566A; 
+    border: 1px solid #CCCCCC; 
     border-radius: 10px;
     background-color: {CARD_COLOR}; 
     color: {TEXT_COLOR};
@@ -23,7 +23,7 @@ INPUT_STYLE = f"""
 
 BUTTON_STYLE = f"""
     background-color: {PRIMARY_COLOR}; 
-    color: white; 
+    color: {TEXT_COLOR}; 
     padding: 8px; 
     font-size: {FONT_SIZE}px; 
     border: none; 
@@ -32,7 +32,7 @@ BUTTON_STYLE = f"""
 
 SECONDARY_BUTTON_STYLE = f"""
     background-color: {SECONDARY_COLOR}; 
-    color: white; 
+    color: {TEXT_COLOR}; 
     padding: 8px; 
     font-size: {FONT_SIZE}px; 
     border: none; 
@@ -41,7 +41,7 @@ SECONDARY_BUTTON_STYLE = f"""
 
 DELETE_BUTTON_STYLE = f"""
     background-color: {DANGER_COLOR}; 
-    color: white; 
+    color: {TEXT_COLOR}; 
     padding: 8px; 
     font-size: {FONT_SIZE}px; 
     border: none; 
@@ -53,4 +53,16 @@ CARD_STYLE = f"""
     color: {TEXT_COLOR}; 
     border-radius: 10px; 
     padding: 8px;
+"""
+
+PROGRESS_BAR_STYLE = f"""
+    QProgressBar {{
+        background-color: {CARD_COLOR}; 
+        color: {TEXT_COLOR}; 
+        border-radius: 5px; 
+    }}
+    QProgressBar::chunk {{
+        background-color: {PRIMARY_COLOR}; 
+        border-radius: 5px; 
+    }}
 """
