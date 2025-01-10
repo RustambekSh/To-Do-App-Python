@@ -15,7 +15,7 @@ class ToDoApp(QWidget):
         self.initUI()
 
     def initUI(self):
-        # Set window properties
+       
         self.setWindowTitle("To-Do List App")
         self.setGeometry(100, 100, 800, 600)
         self.setStyleSheet(f"background-color: {BACKGROUND_COLOR}; color: {TEXT_COLOR}; border-radius: 15px;")
@@ -54,7 +54,7 @@ class ToDoApp(QWidget):
         self.active_tasks_group.setLayout(self.active_tasks_layout)
         self.task_sections.addWidget(self.active_tasks_group)
 
-        # Completed Tasks
+        # Completed Tasks here
         self.completed_tasks_group = QGroupBox("Completed Tasks")
         self.completed_tasks_group.setStyleSheet(f"color: {TEXT_COLOR}; font-size: {FONT_SIZE}px;")
         self.completed_tasks_layout = QVBoxLayout()
@@ -64,7 +64,7 @@ class ToDoApp(QWidget):
 
         layout.addLayout(self.task_sections)
 
-        # Progress bar
+        # Progress barr
         self.progress_bar = QProgressBar(self)
         self.progress_bar.setStyleSheet(f"""
             QProgressBar {{ 
@@ -79,7 +79,7 @@ class ToDoApp(QWidget):
         """)
         layout.addWidget(self.progress_bar)
 
-        # Buttons for additional functionality
+        # Buttons for additional functionalities
         button_layout = QHBoxLayout()
         self.clear_completed_button = QPushButton("🗑️ Clear Completed")
         self.clear_completed_button.setStyleSheet(DELETE_BUTTON_STYLE)
