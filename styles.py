@@ -1,15 +1,15 @@
-
-BACKGROUND_COLOR = "#FFFFFF"  # White
+# Colors
+BACKGROUND_COLOR = "#FBF5DD"  # White
 TEXT_COLOR = "#333333"  # Dark Gray
-PRIMARY_COLOR = "#B4D4EE"  # Soft Blue
+PRIMARY_COLOR = "#A6CDC6"  # Soft Blue
 SECONDARY_COLOR = "#FFD700"  # Gold (for accents)
 DANGER_COLOR = "#FF6B6B"  # Soft Red (for errors/danger)
 CARD_COLOR = "#F5F5F5"  # Light Gray (for cards/widgets)
 
 # Fonts
 FONT_FAMILY = "Arial"
-FONT_SIZE = 14
-HEADER_FONT_SIZE = 24
+FONT_SIZE = 15
+HEADER_FONT_SIZE = 28
 
 # Styles
 INPUT_STYLE = f"""
@@ -28,6 +28,7 @@ BUTTON_STYLE = f"""
     font-size: {FONT_SIZE}px; 
     border: none; 
     border-radius: 10px;
+    background-color: #DDA853
 """
 
 SECONDARY_BUTTON_STYLE = f"""
