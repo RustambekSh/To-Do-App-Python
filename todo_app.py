@@ -279,3 +279,4 @@ class ToDoApp(QWidget):
         except Exception as e:
             print(f"Error in load_tasks: {e}")  # Debugging
             QMessageBox.critical(self, "Error", f"Failed to load tasks: {e}")
+
