@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QDialog, QVBoxLayout, QTextEdit, QDateEdit, QComboBo
 from PyQt5.QtCore import QDate
 from styles import *
 
+
 class TaskDetailsDialog(QDialog):
     def __init__(self, task_text="", due_date=QDate.currentDate(), priority="Medium", description="", tags="", parent=None):
         super().__init__(parent)
