@@ -40,3 +40,4 @@ class FileManager(QWidget):
         if file_path:
             with open(file_path, "r") as file:
                 self.file_display.setText(file.read())
+
