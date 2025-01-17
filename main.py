@@ -7,4 +7,5 @@ if __name__ == "__main__":
     app.setStyle("Fusion")  # Modern style
     window = ToDoApp()
     window.show()
+    
     sys.exit(app.exec_())
