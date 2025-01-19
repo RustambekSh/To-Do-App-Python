@@ -20,16 +20,13 @@ class ToDoApp(QWidget):
         self.setGeometry(100, 100, 800, 600)
         self.setStyleSheet(f"background-color: {BACKGROUND_COLOR}; color: {TEXT_COLOR}; border-radius: 15px;")
 
-        # Main layout
         layout = QVBoxLayout()
 
-        # Header
         header = QLabel("My To-Do List")
         header.setStyleSheet(f"font-size: {HEADER_FONT_SIZE}px; font-weight: bold; color: {PRIMARY_COLOR};")
         header.setAlignment(Qt.AlignCenter)
         layout.addWidget(header)
 
-        # Input field and add button
         input_layout = QHBoxLayout()
         self.task_input = QLineEdit(self)
         self.task_input.setPlaceholderText("Enter a new task...")
@@ -43,10 +40,8 @@ class ToDoApp(QWidget):
 
         layout.addLayout(input_layout)
 
-        # Task sections
         self.task_sections = QVBoxLayout()
 
-        # Active Tasks
         self.active_tasks_group = QGroupBox("Active Tasks")
         self.active_tasks_group.setStyleSheet(f"color: {TEXT_COLOR}; font-size: {FONT_SIZE}px;")
         self.active_tasks_layout = QVBoxLayout()
@@ -54,7 +49,6 @@ class ToDoApp(QWidget):
         self.active_tasks_group.setLayout(self.active_tasks_layout)
         self.task_sections.addWidget(self.active_tasks_group)
 
-        # Completed Tasks here
         self.completed_tasks_group = QGroupBox("Completed Tasks")
         self.completed_tasks_group.setStyleSheet(f"color: {TEXT_COLOR}; font-size: {FONT_SIZE}px;")
         self.completed_tasks_layout = QVBoxLayout()
@@ -63,8 +57,7 @@ class ToDoApp(QWidget):
         self.task_sections.addWidget(self.completed_tasks_group)
 
         layout.addLayout(self.task_sections)
-
-        # Progress barr
+r
         self.progress_bar = QProgressBar(self)
         self.progress_bar.setStyleSheet(f"""
             QProgressBar {{ 
@@ -79,7 +72,6 @@ class ToDoApp(QWidget):
         """)
         layout.addWidget(self.progress_bar)
 
-        # Buttons for additional functionalities
         button_layout = QHBoxLayout()
         self.clear_completed_button = QPushButton("🗑️ Clear Completed")
         self.clear_completed_button.setStyleSheet(DELETE_BUTTON_STYLE)
@@ -93,10 +85,8 @@ class ToDoApp(QWidget):
 
         layout.addLayout(button_layout)
 
-        # Load saved tasks
         self.load_tasks()
 
-        # Set layout
         self.setLayout(layout)
 
     def add_task(self):
@@ -117,49 +107,40 @@ class ToDoApp(QWidget):
 
     def create_task_item(self, task_text, details):
         try:
-            # Create a custom widget for the task item
             task_widget = QWidget()
             task_layout = QHBoxLayout()
 
-            # Checkbox for completing the task
             checkbox = QCheckBox()
             checkbox.setStyleSheet(f"color: {TEXT_COLOR};")
             checkbox.stateChanged.connect(lambda: self.mark_task_completed(task_widget, checkbox))
             task_layout.addWidget(checkbox)
 
-            # Task label
             task_label = QLineEdit(task_text)
             task_label.setReadOnly(True)
             task_label.setStyleSheet(f"background-color: transparent; border: none; color: {TEXT_COLOR}; font-size: {FONT_SIZE}px;")
             task_layout.addWidget(task_label)
 
-            # Priority label
             priority_label = QLabel(details["priority"])
             priority_label.setStyleSheet(
                 f"color: {PRIMARY_COLOR if details['priority'] == 'High' else SECONDARY_COLOR if details['priority'] == 'Medium' else TEXT_COLOR}; font-size: 12px;"
             )
             task_layout.addWidget(priority_label)
 
-            # Due date label
             due_date_label = QLabel(details["due_date"])
             due_date_label.setStyleSheet(f"color: {SECONDARY_COLOR}; font-size: 12px;")
             task_layout.addWidget(due_date_label)
 
-            # Tags label
             tags_label = QLabel(details["tags"])
             tags_label.setStyleSheet(f"color: {TEXT_COLOR}; font-size: 12px;")
             task_layout.addWidget(tags_label)
 
-            # Delete button
             delete_button = QPushButton("🗑️")
             delete_button.setStyleSheet(f"background-color: transparent; border: none; color: {DANGER_COLOR}; font-size: 14px;")
             delete_button.clicked.connect(lambda: self.delete_task(task_widget))
             task_layout.addWidget(delete_button)
 
-            # Set layout to the widget
             task_widget.setLayout(task_layout)
 
-            # Add to the active tasks section
             self.active_tasks_layout.addWidget(task_widget)
         except Exception as e:
             print(f"Error in create_task_item: {e}")
@@ -168,7 +149,6 @@ class ToDoApp(QWidget):
     def mark_task_completed(self, task_widget, checkbox):
         try:
             if checkbox.isChecked():
-                # Move the task to the completed section
                 self.active_tasks_layout.removeWidget(task_widget)
                 self.completed_tasks_layout.addWidget(task_widget)
                 task_widget.setStyleSheet(f"background-color: {CARD_COLOR}; color: {TEXT_COLOR}; border-radius: 10px; padding: 8px;")
@@ -221,7 +201,6 @@ class ToDoApp(QWidget):
     def save_tasks(self):
         try:
             tasks = []
-            # Save active tasks
             for i in range(self.active_tasks_layout.count()):
                 widget = self.active_tasks_layout.itemAt(i).widget()
                 if widget:
@@ -232,7 +211,6 @@ class ToDoApp(QWidget):
                     tags_label = widget.findChildren(QLabel)[2]
                     tasks.append(
                         f"{task_text},{checkbox.isChecked()},{priority_label.text()},{due_date_label.text()},{tags_label.text()}")
-            # Save completed tasks
             for i in range(self.completed_tasks_layout.count()):
                 widget = self.completed_tasks_layout.itemAt(i).widget()
                 if widget:
@@ -245,9 +223,9 @@ class ToDoApp(QWidget):
                         f"{task_text},{checkbox.isChecked()},{priority_label.text()},{due_date_label.text()},{tags_label.text()}")
             with open("todo_qt_advanced.txt", "w") as file:
                 file.write("\n".join(tasks))
-            print("Tasks saved successfully.")  # Debugging
+            print("Tasks saved successfully.") 
         except Exception as e:
-            print(f"Error in save_tasks: {e}")  # Debugging
+            print(f"Error in save_tasks: {e}") 
             QMessageBox.critical(self, "Error", f"Failed to save tasks: {e}")
 
     def load_tasks(self):
@@ -256,10 +234,9 @@ class ToDoApp(QWidget):
                 tasks = file.read().splitlines()
                 for task in tasks:
                     if task:
-                        # Split the task into parts
                         parts = task.split(",")
                         if len(parts) < 5:
-                            print(f"Skipping invalid task: {task}")  # Debugging
+                            print(f"Skipping invalid task: {task}") 
                             continue
                         task_text = parts[0]
                         completed = parts[1]
@@ -268,15 +245,14 @@ class ToDoApp(QWidget):
                         tags = parts[4]
                         details = {"priority": priority, "due_date": due_date, "tags": tags}
                         self.create_task_item(task_text, details)
-                        # Mark task as completed if needed
                         if completed == "True":
                             task_widget = self.active_tasks_layout.itemAt(self.active_tasks_layout.count() - 1).widget()
                             checkbox = task_widget.findChild(QCheckBox)
                             checkbox.setChecked(True)
                             self.mark_task_completed(task_widget, checkbox)
         except FileNotFoundError:
-            print("No saved tasks found.")  # Debugging
+            print("No saved tasks found.") 
         except Exception as e:
-            print(f"Error in load_tasks: {e}")  # Debugging
+            print(f"Error in load_tasks: {e}") 
             QMessageBox.critical(self, "Error", f"Failed to load tasks: {e}")
 
