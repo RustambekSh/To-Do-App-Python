@@ -12,20 +12,17 @@ class TaskDetailsDialog(QDialog):
 
         layout = QVBoxLayout()
 
-        # Task Description
         self.description_input = QTextEdit()
         self.description_input.setPlainText(description)
         self.description_input.setStyleSheet(f"background-color: {CARD_COLOR}; color: {TEXT_COLOR}; font-size: {FONT_SIZE}px; border-radius: 5px;")
         layout.addWidget(QLabel("Description:"))
         layout.addWidget(self.description_input)
 
-        # Due Date
         self.due_date_input = QDateEdit(due_date)
         self.due_date_input.setStyleSheet(f"background-color: {CARD_COLOR}; color: {TEXT_COLOR}; font-size: {FONT_SIZE}px; border-radius: 5px;")
         layout.addWidget(QLabel("Due Date:"))
         layout.addWidget(self.due_date_input)
 
-        # Priority
         self.priority_input = QComboBox()
         self.priority_input.addItems(["High", "Medium", "Low"])
         self.priority_input.setCurrentText(priority)
@@ -33,14 +30,12 @@ class TaskDetailsDialog(QDialog):
         layout.addWidget(QLabel("Priority:"))
         layout.addWidget(self.priority_input)
 
-        # Tags
         self.tags_input = QLineEdit(tags)
         self.tags_input.setPlaceholderText("Enter tags (e.g., Urgent, Important)")
         self.tags_input.setStyleSheet(f"background-color: {CARD_COLOR}; color: {TEXT_COLOR}; font-size: {FONT_SIZE}px; border-radius: 5px;")
         layout.addWidget(QLabel("Tags:"))
         layout.addWidget(self.tags_input)
 
-        # Save Button
         save_button = QPushButton("Save")
         save_button.setStyleSheet(BUTTON_STYLE)
         save_button.clicked.connect(self.accept)
