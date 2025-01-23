@@ -57,7 +57,7 @@ class ToDoApp(QWidget):
         self.task_sections.addWidget(self.completed_tasks_group)
 
         layout.addLayout(self.task_sections)
-r
+
         self.progress_bar = QProgressBar(self)
         self.progress_bar.setStyleSheet(f"""
             QProgressBar {{ 
