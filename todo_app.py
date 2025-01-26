@@ -14,12 +14,10 @@ class ToDoApp(QWidget):
         super().__init__()
         self.initUI()
 
-    def initUI(self):
-       
+    def initUI(self): 
         self.setWindowTitle("To-Do List App")
         self.setGeometry(100, 100, 800, 600)
         self.setStyleSheet(f"background-color: {BACKGROUND_COLOR}; color: {TEXT_COLOR}; border-radius: 15px;")
-
         layout = QVBoxLayout()
 
         header = QLabel("My To-Do List")
@@ -110,7 +108,6 @@ class ToDoApp(QWidget):
         try:
             task_widget = QWidget()
             task_layout = QHBoxLayout()
-
             checkbox = QCheckBox()
             checkbox.setStyleSheet(f"color: {TEXT_COLOR};")
             checkbox.stateChanged.connect(lambda: self.mark_task_completed(task_widget, checkbox))
