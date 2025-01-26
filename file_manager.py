@@ -7,8 +7,7 @@ class FileManager(QWidget):
         super().__init__()
         self.initUI()
 
-    def initUI(self):
-        
+    def initUI(self):   
         self.setWindowTitle("File Manager")
         self.setGeometry(100, 100, 600, 400)
         self.setStyleSheet(f"background-color: {BACKGROUND_COLOR}; color: {TEXT_COLOR}; border-radius: 15px;")
@@ -19,8 +18,7 @@ class FileManager(QWidget):
         header.setStyleSheet(f"font-size: {HEADER_FONT_SIZE}px; font-weight: bold; color: {PRIMARY_COLOR};")
         header.setAlignment(Qt.AlignCenter)
         layout.addWidget(header)
-
-        
+ 
         self.file_display = QTextEdit()
         self.file_display.setReadOnly(True)
         self.file_display.setStyleSheet(f"background-color: {CARD_COLOR}; color: {TEXT_COLOR}; font-size: {FONT_SIZE}px; border-radius: 5px;")
@@ -39,4 +37,3 @@ class FileManager(QWidget):
         if file_path:
             with open(file_path, "r") as file:
                 self.file_display.setText(file.read())
-
