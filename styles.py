@@ -9,6 +9,7 @@ FONT_FAMILY = "Arial"
 FONT_SIZE = 15
 HEADER_FONT_SIZE = 28
 
+
 INPUT_STYLE = f"""
     padding: 8px; 
     font-size: {FONT_SIZE}px; 
