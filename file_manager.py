@@ -24,8 +24,7 @@ class FileManager(QWidget):
         self.file_display.setReadOnly(True)
         self.file_display.setStyleSheet(f"background-color: {CARD_COLOR}; color: {TEXT_COLOR}; font-size: {FONT_SIZE}px; border-radius: 5px;")
         layout.addWidget(self.file_display)
-
-        
+  
         load_button = QPushButton("Load Files")
         load_button.setStyleSheet(SECONDARY_BUTTON_STYLE)
         load_button.clicked.connect(self.load_files)
