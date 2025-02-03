@@ -54,6 +54,7 @@ CARD_STYLE = f"""
     padding: 8px;
 """
 
+
 PROGRESS_BAR_STYLE = f"""
     QProgressBar {{
         background-color: {CARD_COLOR}; 
