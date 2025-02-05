@@ -42,7 +42,6 @@ class TaskDetailsDialog(QDialog):
 
         self.setLayout(layout)
 
-    
     def get_details(self):
         return {
             "description": self.description_input.toPlainText(),
