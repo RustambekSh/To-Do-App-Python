@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton, QTextEdit, QFileDialog
 from PyQt5.QtCore import Qt 
-from styles import * 
+from styles import *  
 
 class FileManager(QWidget):
     def __init__(self):
