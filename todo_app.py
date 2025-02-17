@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QDialog
 from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QPushButton, QCheckBox,
     QMessageBox, QLabel, QProgressBar, QGroupBox
-) 
+)  
 from PyQt5.QtCore import Qt
 from task_details_dialog import TaskDetailsDialog
 from file_manager import FileManager
