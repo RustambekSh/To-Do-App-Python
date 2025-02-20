@@ -9,7 +9,7 @@ class FileManager(QWidget):
 
     def initUI(self):   
         self.setWindowTitle("File Manager")
-        self.setGeometry(100, 100, 600, 400)
+        self.setGeometry(100, 100, 600, 400) 
         self.setStyleSheet(f"background-color: {BACKGROUND_COLOR}; color: {TEXT_COLOR}; border-radius: 15px;")
 
         layout = QVBoxLayout()
