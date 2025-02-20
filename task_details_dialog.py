@@ -20,7 +20,7 @@ class TaskDetailsDialog(QDialog):
         self.due_date_input = QDateEdit(due_date)
         self.due_date_input.setStyleSheet(f"background-color: {CARD_COLOR}; color: {TEXT_COLOR}; font-size: {FONT_SIZE}px; border-radius: 5px;")
         layout.addWidget(QLabel("Due Date:"))
-        layout.addWidget(self.due_date_input)
+        layout.addWidget(self.due_date_input) 
 
         self.priority_input = QComboBox()
         self.priority_input.addItems(["High", "Medium", "Low"])
