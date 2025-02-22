@@ -12,7 +12,7 @@ class FileManager(QWidget):
         self.setGeometry(100, 100, 600, 400) 
         self.setStyleSheet(f"background-color: {BACKGROUND_COLOR}; color: {TEXT_COLOR}; border-radius: 15px;")
 
-        layout = QVBoxLayout()
+        layout = QVBoxLayout() 
 
         header = QLabel("Saved Files")
         header.setStyleSheet(f"font-size: {HEADER_FONT_SIZE}px; font-weight: bold; color: {PRIMARY_COLOR};")
