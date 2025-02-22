@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtCore import Qt
 from task_details_dialog import TaskDetailsDialog
 from file_manager import FileManager
-from styles import *
+from styles import * 
 
 class ToDoApp(QWidget):
     def __init__(self):
