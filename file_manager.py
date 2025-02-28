@@ -5,7 +5,7 @@ from styles import *
 class FileManager(QWidget):
     def __init__(self):
         super().__init__()
-        self.initUI() 
+        self.initUI()  
 
     def initUI(self):   
         self.setWindowTitle("File Manager")
