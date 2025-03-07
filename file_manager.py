@@ -1,13 +1,13 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton, QTextEdit, QFileDialog
-from PyQt5.QtCore import Qt  
-from styles import *    
+from PyQt5.QtCore import Qt
+from styles import *
 
 class FileManager(QWidget):
     def __init__(self):
         super().__init__()
-        self.initUI()  
+        self.initUI()
 
-    def initUI(self):   
+    def initUI(self):
         self.setWindowTitle("File Manager")
         self.setGeometry(100, 100, 600, 400) 
         self.setStyleSheet(f"background-color: {BACKGROUND_COLOR}; color: {TEXT_COLOR}; border-radius: 15px;")
