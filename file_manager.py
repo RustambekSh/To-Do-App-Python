@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton, QTextEdit
 from PyQt5.QtCore import Qt
 from styles import *
 
-class FileManager(QWidget):
+class FileManager(QWidget): 
     def __init__(self):
         super().__init__()
         self.initUI()
