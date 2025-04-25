@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import QApplication
 from todo_app import ToDoApp 
 
-from todo_app import ToDoApp
+from todo_app import ToDoApp 
 
  
 if __name__ == "__main__":
